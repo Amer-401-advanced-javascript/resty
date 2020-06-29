@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Amer-401-advanced-javascript/resty/static/css/main.e48a24e9.chunk.css",
+    "main.js": "/Amer-401-advanced-javascript/resty/static/js/main.2866a1ec.chunk.js",
+    "main.js.map": "/Amer-401-advanced-javascript/resty/static/js/main.2866a1ec.chunk.js.map",
+    "runtime-main.js": "/Amer-401-advanced-javascript/resty/static/js/runtime-main.658ff290.js",
+    "runtime-main.js.map": "/Amer-401-advanced-javascript/resty/static/js/runtime-main.658ff290.js.map",
+    "static/js/2.25b57a3a.chunk.js": "/Amer-401-advanced-javascript/resty/static/js/2.25b57a3a.chunk.js",
+    "static/js/2.25b57a3a.chunk.js.map": "/Amer-401-advanced-javascript/resty/static/js/2.25b57a3a.chunk.js.map",
+    "index.html": "/Amer-401-advanced-javascript/resty/index.html",
+    "precache-manifest.21311215c3c3be2fa8bb5c3cdeb6e355.js": "/Amer-401-advanced-javascript/resty/precache-manifest.21311215c3c3be2fa8bb5c3cdeb6e355.js",
+    "service-worker.js": "/Amer-401-advanced-javascript/resty/service-worker.js",
+    "static/css/main.e48a24e9.chunk.css.map": "/Amer-401-advanced-javascript/resty/static/css/main.e48a24e9.chunk.css.map",
+    "static/js/2.25b57a3a.chunk.js.LICENSE.txt": "/Amer-401-advanced-javascript/resty/static/js/2.25b57a3a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.658ff290.js",
+    "static/js/2.25b57a3a.chunk.js",
+    "static/css/main.e48a24e9.chunk.css",
+    "static/js/main.2866a1ec.chunk.js"
+  ]
+}
