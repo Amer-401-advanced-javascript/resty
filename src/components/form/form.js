@@ -7,47 +7,67 @@ class Form extends React.Component{
         super(prop);
         this.state = {
             url:'',
-            method:''
+            method:'',
+            request: { }
         }
     }
-
-    handleClick = (event)=>{
+    
+    handleMethod = event => {
+        const method = event.target.value;
+        this.setState({method});
+    }
+    
+    handleUrl = event => {
+        let url =event.target.value;
+        this.setState({url});
+    }
+    
+    handleSubmit = event => {        
         event.preventDefault();
-        let rest = document.getElementsByName('rest')
-        let url = document.getElementById('url').value        
-        for( let i =0; i < rest.length; i++){
-            if(rest[i].checked){
-                let method = rest[i].value           
-                    this.setState({method})
-                    this.setState({url})
-            }
+        
+        if(this.state.url && this.state.method){
+            let request = {
+                url: this.state.url,
+                method: this.state.method,
+              };
+        
+              // Clear old settings
+              let url = '';
+              let method = '';
+        
+              this.setState({request, url, method});
+              event.target.reset();
+
+        } else{
+            alert('Missing information');
         }
     }
 
   render() {
     return (
         <> 
-        <form>
+        <form onSubmit = {this.handleSubmit}>
             <label className='url'> URL</label>
-            <input type='text' id='url'/>
-            <button onClick={this.handleClick}>GO!</button>
+            <input type='text' onChange= {this.handleUrl} id='url'/>
+            <button type='submit'>GO!</button>
             
             <label for='get'>GET</label>
-            <input type='radio' name='rest' id='get' value='GET' />
+            <input type='radio' name='rest' id='get' onClick={this.handleMethod} value='GET' />
 
             <label for='post'>POST</label>
-            <input type='radio' name='rest' id='post' value='POST' />
+            <input type='radio' name='rest' id='post' onClick={this.handleMethod}  value='POST' />
 
             <label for='put'>PUT</label>
-            <input type='radio' name='rest' id='put' value='PUT' />
+            <input type='radio' name='rest' id='put' onClick={this.handleMethod}  value='PUT' />
 
             <label for='delete'>DELETE</label>
-            <input type='radio' name='rest' id='delete' value='DELETE' />
+            <input type='radio' name='rest' id='delete' onClick={this.handleMethod}  value='DELETE' />
         </form>
         
-        <div id='result'>
-            <p>{this.state.method} {this.state.url}</p>
-        </div>
+        <section id="result">
+          <span className="method">{this.state.request.method}</span>
+          <span className="url">{this.state.request.url}</span>
+        </section>
         </>
         
     )
