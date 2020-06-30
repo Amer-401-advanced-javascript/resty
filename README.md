@@ -8,8 +8,9 @@
 
 - [submission PR](https://github.com/Amer-401-advanced-javascript/resty/tree/base)
 <!-- - [ci/cd](http://xyz.com) (GitHub Actions)
-- [back-end server url](http://xyz.com) (when applicable)
-- [front-end application](http://xyz.com) (when applicable) -->
+- [back-end server url](http://xyz.com) (when applicable) -->
+- [front-end application](https://amer-401-advanced-javascript.github.io/resty/)
+- [front-end application](https://sleepy-euler-a446f1.netlify.app/) (when applicable)
 
 <!-- ### Setup
 
@@ -24,12 +25,12 @@
 
 - e.g. `npm start`
 
-<!-- #### How to use your library (where applicable)
+<!-- #### How to use your library (where applicable) -->
 
 #### Tests
 
-- How do you run tests?
-- Any tests of note?
+- How do you run tests? To run the test type ``npm run test`` in the terminal 
+<!-- - Any tests of note?
 - Describe any tests that you did not complete, skipped, etc -->
 
 #### UML
