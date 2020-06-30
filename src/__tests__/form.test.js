@@ -29,6 +29,8 @@ describe('<Form />', () => {
            expect(app.state('method')).toBe('');
     });
 
-
-
+it('render correctly', () => {
+    const tree = renderer.create(<Form />).toJSON();
+    expect(tree).toMatchSnapshot();
+})
 })
