@@ -10,7 +10,7 @@
 <!-- - [ci/cd](http://xyz.com) (GitHub Actions)
 - [back-end server url](http://xyz.com) (when applicable) -->
 - [front-end application](https://amer-401-advanced-javascript.github.io/resty/)
-- [front-end application](https://sleepy-euler-a446f1.netlify.app/) (when applicable)
+- [front-end application](https://xenodochial-swartz-a8fe33.netlify.app/) (when applicable)
 
 <!-- ### Setup
 
