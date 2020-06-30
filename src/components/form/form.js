@@ -3,8 +3,8 @@ import './form.scss'
 
 
 class Form extends React.Component{
-    constructor(prop){
-        super(prop);
+    constructor(props){
+        super(props);
         this.state = {
             url:'',
             method:'',
@@ -22,7 +22,7 @@ class Form extends React.Component{
         this.setState({url});
     }
     
-    handleSubmit = event => {        
+    handleSubmit = async event => {        
         event.preventDefault();
         
         if(this.state.url && this.state.method){
@@ -30,14 +30,26 @@ class Form extends React.Component{
                 url: this.state.url,
                 method: this.state.method,
               };
+              let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+              let response = await fetch(proxyUrl+this.state.url);
+              let data = await response.json();
+              
+              let header={} ;
+              for (let [key, value] of response.headers) {
+                header[key] = value;
+              }
+              
+              let count = data.results.length;
+              let responseData = data.results
+              let result = {responseData, header}
+
+              this.props.handler(count, result);
         
               // Clear old settings
               let url = '';
               let method = '';
         
               this.setState({request, url, method});
-              event.target.reset();
-
         } else{
             alert('Missing information');
         }
@@ -45,7 +57,6 @@ class Form extends React.Component{
 
   render() {
     return (
-        <> 
         <form onSubmit = {this.handleSubmit}>
             <label className='url'> URL</label>
             <input type='text' onChange= {this.handleUrl} id='url'/>
@@ -62,14 +73,7 @@ class Form extends React.Component{
 
             <label for='delete'>DELETE</label>
             <input type='radio' name='rest' id='delete' onClick={this.handleMethod}  value='DELETE' />
-        </form>
-        
-        <section id="result">
-          <span className="method">{this.state.request.method}</span>
-          <span className="url">{this.state.request.url}</span>
-        </section>
-        </>
-        
+        </form> 
     )
   }
 }
