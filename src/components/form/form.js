@@ -38,9 +38,13 @@ class Form extends React.Component{
               for (let [key, value] of response.headers) {
                 header[key] = value;
               }
-              
-              let count = data.results.length;
-              let responseData = data.results
+              let count ;
+              if( data.count ){
+              count= data.results.length;
+              } else{
+                count = 0;
+              }
+              let responseData = data
               let result = {responseData, header}
 
               this.props.handler(count, result);
