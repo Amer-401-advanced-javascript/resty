@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -10,18 +11,19 @@ import App from './App';
 //   document.getElementById('root')
 // );
 
-
-class Main extends React.Component{
-  render(){
-    return <App />
+class Main extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
   }
 }
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 
-ReactDOM.render(<Main />, rootElement)
-
+ReactDOM.render(<Main />, rootElement);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-

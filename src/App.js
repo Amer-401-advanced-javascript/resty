@@ -1,9 +1,10 @@
 import React from "react";
 // import './App.css';
 import Header from "./components/header/header";
-import Form from "./components/form/form";
+// import Form from "./components/form/form";
 import Footer from "./components/footer/footer";
 import Result from './components/results/results';
+import Routes from './components/routes';
 
 class App extends React.Component {
   constructor(props){
@@ -24,7 +25,8 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Form handler = {this.handleSubmitResult} />
+        <Routes handler = {this.handleSubmitResult}/>
+        {/* <Form handler = {this.handleSubmitResult} /> */}
         <Result count = { this.state.counter} result = {this.state.result} />
         <Footer />
       </React.Fragment>
