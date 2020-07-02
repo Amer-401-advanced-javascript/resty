@@ -47,14 +47,14 @@ class Form extends React.Component {
       let responseData = data;
       let result = { responseData, header };
       this.props.handler(count, result);
-
+      
       // Clear old settings
       let url = "";
       let method = "";
-
+     
       this.setState({ request, url, method });
       let stringify = JSON.stringify(this.state.request);
-            localStorage.setItem(`${this.state.request.url}`, stringify);
+      localStorage.setItem(`${this.state.request.url}`, stringify);
     } else {
       alert("Missing information");
     }
@@ -67,7 +67,7 @@ class Form extends React.Component {
         <input type="text" onChange={this.handleUrl} id="url" />
         <button type="submit">GO!</button>
 
-        <label for="get">GET</label>
+        <label htmlFor="get">GET</label>
         <input
           type="radio"
           name="rest"
@@ -76,7 +76,7 @@ class Form extends React.Component {
           value="GET"
         />
 
-        <label for="post">POST</label>
+        <label htmlFor="post">POST</label>
         <input
           type="radio"
           name="rest"
@@ -85,7 +85,7 @@ class Form extends React.Component {
           value="POST"
         />
 
-        <label for="put">PUT</label>
+        <label htmlFor="put">PUT</label>
         <input
           type="radio"
           name="rest"
@@ -94,7 +94,7 @@ class Form extends React.Component {
           value="PUT"
         />
 
-        <label for="delete">DELETE</label>
+        <label htmlFor="delete">DELETE</label>
         <input
           type="radio"
           name="rest"
